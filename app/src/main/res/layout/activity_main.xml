@@ -12,7 +12,8 @@
         android:text="20"
         android:id="@+id/life"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="75sp" />
 
     <Button
         android:layout_width="wrap_content"

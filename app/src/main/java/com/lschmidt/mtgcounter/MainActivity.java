@@ -23,6 +23,20 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("currentLife", counter);
+    }
+
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+
+        counter = savedInstanceState.getInt("currentLife");
+        final TextView life = (TextView) findViewById(R.id.life);
+        life.setText((Integer.toString(counter)));
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
