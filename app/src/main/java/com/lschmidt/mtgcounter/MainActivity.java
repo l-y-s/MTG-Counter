@@ -11,11 +11,13 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.*;
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
 
     int counter = 20;
+    int backButtonCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,5 +92,21 @@ public class MainActivity extends ActionBarActivity {
     public void switchTwoPlayer(){
         Intent intent = new Intent(this, TwoPlayer.class);
         startActivity(intent);
+    }
+
+    public void onBackPressed()
+    {
+        if(backButtonCount >= 1)
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        else
+        {
+            Toast.makeText(this, "Press the back button again to close the application.", Toast.LENGTH_SHORT).show();
+            backButtonCount++;
+        }
     }
 }
