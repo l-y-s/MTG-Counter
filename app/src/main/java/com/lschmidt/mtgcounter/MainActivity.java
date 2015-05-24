@@ -1,5 +1,6 @@
 package com.lschmidt.mtgcounter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import java.util.*;
+import android.support.annotation.NonNull;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -29,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
         outState.putInt("currentLife", counter);
     }
 
-    protected void onRestoreInstanceState(Bundle savedInstanceState){
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
 
         counter = savedInstanceState.getInt("currentLife");
@@ -67,6 +69,18 @@ public class MainActivity extends ActionBarActivity {
 
     public void increment(View view) {
         counter++;
+        final TextView life = (TextView) findViewById(R.id.life);
+        life.setText(Integer.toString(counter));
+    }
+
+    public void decrement5 (View view) {
+        counter = counter - 5;
+        final TextView life = (TextView) findViewById(R.id.life);
+        life.setText(Integer.toString(counter));
+    }
+
+    public void increment5(View view) {
+        counter = counter + 5;
         final TextView life = (TextView) findViewById(R.id.life);
         life.setText(Integer.toString(counter));
     }

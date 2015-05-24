@@ -20,19 +20,39 @@
         android:layout_height="wrap_content"
         android:text="-1"
         android:id="@+id/D_button"
-        android:layout_centerVertical="true"
+        android:layout_above="@id/life"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="decrement"/>
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+1"
         android:id="@+id/I_button"
-        android:layout_centerVertical="true"
+        android:layout_above="@id/life"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:onClick="increment"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-5"
+        android:id="@+id/D5_button"
+        android:layout_below="@id/life"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="decrement5"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+5"
+        android:id="@+id/I5_button"
+        android:layout_below="@id/life"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="increment5"/>
 </RelativeLayout>
