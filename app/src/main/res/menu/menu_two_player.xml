@@ -1,12 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.lschmidt.mtgcounter.TwoPlayer">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 
     <item
-        android:id = "@+id/action_twoPlayer"
-        android:title = "Two Player Mode"
+        android:id = "@+id/action_onePlayer"
+        android:title = "One Player Mode"
         app:showAsAction = "never"/>
 
 </menu>
