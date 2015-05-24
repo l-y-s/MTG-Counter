@@ -20,10 +20,10 @@
         android:layout_height="wrap_content"
         android:text="-1"
         android:id="@+id/D_button"
-        android:layout_above="@id/life"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="decrement"/>
+        android:onClick="decrement"
+        android:layout_alignTop="@+id/life"
+        android:layout_alignLeft="@+id/D5_button"
+        android:layout_alignStart="@+id/D5_button" />
 
 
     <Button
@@ -31,28 +31,28 @@
         android:layout_height="wrap_content"
         android:text="+1"
         android:id="@+id/I_button"
-        android:layout_above="@id/life"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="increment"/>
+        android:onClick="increment"
+        android:layout_alignTop="@+id/life"
+        android:layout_alignLeft="@+id/I5_button"
+        android:layout_alignStart="@+id/I5_button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-5"
         android:id="@+id/D5_button"
-        android:layout_below="@id/life"
+        android:onClick="decrement5"
+        android:layout_below="@+id/D_button"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="decrement5"/>
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+5"
         android:id="@+id/I5_button"
-        android:layout_below="@id/life"
+        android:onClick="increment5"
+        android:layout_below="@+id/I_button"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="increment5"/>
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
