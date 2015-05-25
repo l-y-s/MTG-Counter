@@ -18,25 +18,28 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
+    //Global variables
     int counter = 20;
-    boolean backButtonPressedTwice = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Sets counter to 20 by default on startup
         final TextView life = (TextView) findViewById(R.id.life);
         life.setText(Integer.toString(counter));
 
     }
 
+    //Saves counter value when rotating or leaving app
     protected void onSaveInstanceState(Bundle outState){
         super.onSaveInstanceState(outState);
 
         outState.putInt("currentLife", counter);
     }
 
+    //Restores counter value when rotating or resuming app
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
 
@@ -67,6 +70,7 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    //Incrementing and decrementing functions
     public void decrement(View view) {
         counter--;
         final TextView life = (TextView) findViewById(R.id.life);
@@ -91,12 +95,14 @@ public class MainActivity extends ActionBarActivity {
         life.setText(Integer.toString(counter));
     }
 
+    //Starts Two Player activity
     public void switchTwoPlayer(){
         Intent intent = new Intent(this, TwoPlayer.class);
         startActivity(intent);
         finish();
     }
 
+    //Creates exit confirmation dialog popup when back button is pressed
     public void onBackPressed(){
         new AlertDialog.Builder(this)
                 .setMessage("Do you want to exit?")

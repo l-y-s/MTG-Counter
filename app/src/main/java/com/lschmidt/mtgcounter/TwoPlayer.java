@@ -19,17 +19,20 @@ import org.w3c.dom.Text;
 
 public class TwoPlayer extends ActionBarActivity {
 
+    //Global variables
     int counter1 = 20;
     int counter2 = 20;
-    boolean backButtonPressedTwice = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_player);
+
+        //Forces activity into landscape mode
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
+    //Saves counter value when rotating or leaving app
     protected void onSaveInstanceState(Bundle outState){
         super.onSaveInstanceState(outState);
 
@@ -37,6 +40,7 @@ public class TwoPlayer extends ActionBarActivity {
         outState.putInt("playerTwoLife", counter2);
     }
 
+    //Restores counter value when rotating or resuming app
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
 
@@ -70,6 +74,7 @@ public class TwoPlayer extends ActionBarActivity {
         }
     }
 
+    //Increment and decrement functions
     public void decrementLife1 (View view){
         counter1--;
         final TextView life1 = (TextView) findViewById(R.id.life1);
@@ -118,24 +123,25 @@ public class TwoPlayer extends ActionBarActivity {
         life2.setText(Integer.toString(counter2));
     }
 
+    //Starts One Player activity
     public void switchOnePlayer() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 
-
+    //Creates exit confirmation dialog popup when back button is pressed
     public void onBackPressed(){
          new AlertDialog.Builder(this)
-             .setMessage("Do you want to exit?")
+                 .setMessage("Do you want to exit?")
             .setCancelable(false)
-            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                 finish();
-                 }
-            })
-            .setNegativeButton("No", null)
+                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         finish();
+                    }
+                })
+                 .setNegativeButton("No", null)
             .show();
     }
 }
