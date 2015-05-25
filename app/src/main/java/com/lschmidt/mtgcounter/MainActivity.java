@@ -1,9 +1,11 @@
 package com.lschmidt.mtgcounter;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity {
 
     int counter = 20;
-    int backButtonCount = 0;
+    boolean backButtonPressedTwice = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,21 +94,20 @@ public class MainActivity extends ActionBarActivity {
     public void switchTwoPlayer(){
         Intent intent = new Intent(this, TwoPlayer.class);
         startActivity(intent);
+        finish();
     }
 
-    public void onBackPressed()
-    {
-        if(backButtonCount >= 1)
-        {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
-        else
-        {
-            Toast.makeText(this, "Press the back button again to close the application.", Toast.LENGTH_SHORT).show();
-            backButtonCount++;
-        }
+    public void onBackPressed(){
+        new AlertDialog.Builder(this)
+                .setMessage("Do you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 }
