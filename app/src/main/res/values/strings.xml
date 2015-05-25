@@ -1,7 +1,13 @@
 <resources>
-    <string name="app_name">MTG Counter</string>
 
+    <string name="app_name">MTG Counter</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_two_player">TwoPlayer</string>
+    <string name="one_decrement">-1</string>
+    <string name="five_decrement">-5</string>
+    <string name="one_increment">+1</string>
+    <string name="five_increment">+5</string>
+    <string name="starting_life">20</string>
+
 </resources>
