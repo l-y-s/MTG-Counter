@@ -101,9 +101,18 @@ public class MainActivity extends AppCompatActivity {
 
     //Resets life totals
     public void reset(View view) {
-        final TextView life = (TextView) findViewById(R.id.life);
-        life.setText("20");
-        counter = 20;
+        new AlertDialog.Builder(this)
+                .setMessage("Do you want to reset life totals?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        final TextView life = (TextView) findViewById(R.id.life);
+                        life.setText("20");
+                        counter = 20;
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 
     //Creates exit confirmation dialog popup when back button is pressed

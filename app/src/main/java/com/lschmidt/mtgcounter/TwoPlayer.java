@@ -128,12 +128,22 @@ public class TwoPlayer extends AppCompatActivity {
 
     //Resets life totals
     public void reset(View view){
-        final TextView life1 = (TextView) findViewById(R.id.life1);
-        final TextView life2 = (TextView) findViewById(R.id.life2);
-        life1.setText("20");
-        life2.setText("20");
-        counter1 = 20;
-        counter2 = 20;
+        new AlertDialog.Builder(this)
+                .setMessage("Do you want to reset life totals?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        final TextView life1 = (TextView) findViewById(R.id.life1);
+                        final TextView life2 = (TextView) findViewById(R.id.life2);
+                        life1.setText("20");
+                        life2.setText("20");
+                        counter1 = 20;
+                        counter2 = 20;
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+
     }
 
     //Creates exit confirmation dialog popup when back button is pressed
