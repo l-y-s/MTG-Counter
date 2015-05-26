@@ -99,6 +99,13 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    //Resets life totals
+    public void reset(View view) {
+        final TextView life = (TextView) findViewById(R.id.life);
+        life.setText("20");
+        counter = 20;
+    }
+
     //Creates exit confirmation dialog popup when back button is pressed
     public void onBackPressed(){
         new AlertDialog.Builder(this)

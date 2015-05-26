@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 
 public class TwoPlayer extends AppCompatActivity {
 
@@ -122,6 +124,16 @@ public class TwoPlayer extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    //Resets life totals
+    public void reset(View view){
+        final TextView life1 = (TextView) findViewById(R.id.life1);
+        final TextView life2 = (TextView) findViewById(R.id.life2);
+        life1.setText("20");
+        life2.setText("20");
+        counter1 = 20;
+        counter2 = 20;
     }
 
     //Creates exit confirmation dialog popup when back button is pressed

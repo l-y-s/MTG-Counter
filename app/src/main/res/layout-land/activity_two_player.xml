@@ -121,4 +121,14 @@
         android:layout_alignStart="@+id/I_button1"
         android:onClick="increment5Life1"/>
 
+    <ImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/reset_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentEnd = "true"
+        android:src = "@drawable/ic_action_refresh2"
+        android:onClick="reset"/>
+
 </RelativeLayout>
