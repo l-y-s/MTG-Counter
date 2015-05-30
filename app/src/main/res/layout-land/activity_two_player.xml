@@ -18,7 +18,9 @@
         android:layout_alignRight="@+id/I_button1"
         android:layout_alignEnd="@+id/I_button1"
         android:layout_marginRight="56dp"
-        android:layout_marginEnd="56dp" />
+        android:layout_marginEnd="56dp"
+        android:onClick="setLifeTotal1"
+        android:clickable="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +33,9 @@
         android:layout_marginEnd="56dp"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/I_button2"
-        android:layout_alignEnd="@+id/I_button2" />
+        android:layout_alignEnd="@+id/I_button2"
+        android:onClick="setLifeTotal2"
+        android:clickable="true"/>
 
     <Button
         android:layout_width="wrap_content"

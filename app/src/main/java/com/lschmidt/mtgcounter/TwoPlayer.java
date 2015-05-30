@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -155,9 +156,53 @@ public class TwoPlayer extends AppCompatActivity {
                      @Override
                      public void onClick(DialogInterface dialog, int which) {
                          finish();
-                    }
-                })
+                     }
+                 })
                  .setNegativeButton("No", null)
             .show();
+    }
+
+    public void setLifeTotal1(View view) {
+        final EditText input = new EditText(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Set life total: ");
+        builder.setView(input);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                final TextView life1 = (TextView) findViewById(R.id.life1);
+                life1.setText(input.getText().toString());
+                counter1 = Integer.parseInt(input.getText().toString());
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    public void setLifeTotal2(View view) {
+        final EditText input = new EditText(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Set life total: ");
+        builder.setView(input);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                final TextView life2 = (TextView) findViewById(R.id.life2);
+                life2.setText(input.getText().toString());
+                counter2 = Integer.parseInt(input.getText().toString());
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
     }
 }

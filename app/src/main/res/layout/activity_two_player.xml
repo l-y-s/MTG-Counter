@@ -14,7 +14,9 @@
         android:layout_marginTop="30dp"
         android:textSize="75sp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="setLifeTotal1"
+        android:clickable="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,7 +26,9 @@
         android:textSize="75sp"
         android:layout_below="@+id/life1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp" />
+        android:layout_marginTop="125dp"
+        android:onClick="setLifeTotal2"
+        android:clickable="true"/>
 
     <Button
         android:layout_width="wrap_content"
